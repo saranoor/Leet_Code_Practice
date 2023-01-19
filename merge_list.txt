@@ -1,0 +1,25 @@
+class Solution():
+	def merge_list(list1 -> list, list2->list):
+		"""
+		Merge and sort two sorted list
+		Args: two sorted list list1 list2
+		Returns:
+		a sorted merged list
+		"""
+		# Complexity 0(N)
+		# Space Complexity O(N)
+		#list1=[1,5,6,9]
+		#list2=[2,6,8,10,11,12]
+		list3=[]
+		while(list1 and list2):
+			if list1[0]<=list2[0]:
+				list3.append(list1[0])
+				list1.pop(0)
+			elif list1[0]>list2[0]:
+				list3.append(list2[0])
+				list2.pop(0)
+		if list1:
+			list3.extend(list1)
+		elif list2:
+			list3.extend(list2)
+		return list3
